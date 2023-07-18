@@ -7,6 +7,9 @@ CV_DIR = examples/cv
 RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
 CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
 
+# TO DO: split directory
+MAIN_DIR = main
+
 examples: $(foreach x, coverletter cv resume, $x.pdf)
 
 resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
