@@ -9,6 +9,7 @@ CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
 
 # TO DO: split directory
 MAIN_DIR = main
+MAIN_CV_SRCS = $(shell find $(MAIN_DIR) -name '*.tex')
 
 examples: $(foreach x, coverletter cv resume, $x.pdf)
 
@@ -17,6 +18,9 @@ resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
 
 cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
 	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+
+cv : $(MAIN_DIR)/cv.tex $(MAIN_CV_SRCS)
+	$(CC) -output-directory=$(MAIN_DIR) $<
 
 coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
 	$(CC) -output-directory=$(EXAMPLES_DIR) $<
