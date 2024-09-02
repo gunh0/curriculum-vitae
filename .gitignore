@@ -1,3 +1,8 @@
+### Mac OS X ###
+## Mac OS X metadata files:
+*.DS_Store
+
+
 ### TeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
@@ -7,17 +12,31 @@
 *.fls
 *.out
 *.toc
-*.fdb_latexmk
+*.fmt
+*.fot
+*.cb
+*.cb2
+.*.lb
 
 ## Intermediate documents:
 *.dvi
+*.xdv
 *-converted-to.*
+# these rules might exclude image files for figures etc.
+*.ps
+# *.eps
+# *.pdf
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
 
 ### Editor ###
 ## Vim & Emacs temp files:
 .*sw[op]
 *~
-
-### Mac OS X ###
-## Mac OS X metadata files:
-*.DS_Store
