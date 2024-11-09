@@ -1,4 +1,5 @@
 # My Own Curriculum Vitae
+>
 > [https://github.com/gunh0/curriculum-vitae/blob/master/main/cv.pdf](https://github.com/gunh0/curriculum-vitae/blob/master/main/cv.pdf)
 
 <br/>
@@ -17,26 +18,33 @@ CV_DIR = examples/cv
 RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
 CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
 
+# TO DO: split directory
+MAIN_DIR = main
+MAIN_CV_SRCS = $(shell find $(MAIN_DIR) -name '*.tex')
+
 examples: $(foreach x, coverletter cv resume, $x.pdf)
 
-resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+ex-resume.pdf: $(EXAMPLES_DIR)/resume.tex $(RESUME_SRCS)
+ $(CC) -output-directory=$(EXAMPLES_DIR) $<
 
-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+ex-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
+ $(CC) -output-directory=$(EXAMPLES_DIR) $<
 
-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+cv.pdf : $(MAIN_DIR)/cv.tex $(MAIN_CV_SRCS)
+ $(CC) -output-directory=$(MAIN_DIR) $<
+
+ex-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
+ $(CC) -output-directory=$(EXAMPLES_DIR) $<
 
 clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+ rm -rf $(EXAMPLES_DIR)/*.pdf
 ```
 
-To run xelatex on a Mac locally, you need to install https://www.tug.org/mactex/ as follows:
+To run xelatex on a Mac locally, you need to install <https://www.tug.org/mactex/> as follows:
 
--   Go to the MacTeX website at https://www.tug.org/mactex/ and click on the "Download" button.
+- Go to the MacTeX website at <https://www.tug.org/mactex/> and click on the "Download" button.
 
--   Once the download is complete, open the MacTeX.pkg file and follow the installation instructions.
+- Once the download is complete, open the MacTeX.pkg file and follow the installation instructions.
 
 <br/>
 
@@ -44,7 +52,7 @@ To run xelatex on a Mac locally, you need to install https://www.tug.org/mactex/
 
 ### Reference
 
-> https://github.com/posquit0/Awesome-CV
+> <https://github.com/posquit0/Awesome-CV>
 
 <h1 align="center">
   <a href="https://github.com/posquit0/Awesome-CV" title="AwesomeCV Documentation">
