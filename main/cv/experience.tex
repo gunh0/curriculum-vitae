@@ -16,32 +16,33 @@
     {Dec. 2024 - Present} % Date(s)
     {
       \begin{cvitems}
-        \item {Cloud Security Operations}
+        \item {Code-based standardization of AWS-native security services across a large multi-account, multi-region environment}
         \begin{itemize}
-          \item {Operation and advancement of AWS native security solutions including GuardDuty for continuous anomaly detection (credential theft, malware, suspicious API calls, abnormal traffic, cryptomining)}
-          \item {Implementation of integrated SIEM and monitoring systems via AWS Security Lake and Security Hub}
-          \item {Integrated diverse log sources (CloudTrail, VPC Flow Logs, GuardDuty, Security Hub) for real-time anomaly detection and incident correlation}
-          \item {Developed SOAR (Security Orchestration, Automation and Response) workflows using n8n for automated incident response and security operations efficiency}
-          \item {Development of automated forensic isolation workflows with dedicated accounts for rapid incident containment}
-          \item {Enhancement of web application security through AWS WAF customization}
+          \item {Security Hub CSPM and GuardDuty as per-account, per-region Terraform modules so newly onboarded accounts inherit the security baseline}
+          \item {Extended GuardDuty threat detection coverage across accounts and regions}
+          \item {Correlation-based ChatOps alert routing and real-time triage for GuardDuty findings}
+          \item {AWS WAF standard policy; block-log analysis drives false-positive rule tuning and exception handling before switching to block mode}
         \end{itemize}
-        \item {Cloud Center of Excellence (CCoE)}
+        \item {Cloud SIEM/SOAR stack and the detection-to-response operating process}
         \begin{itemize}
-          \item {Established and advanced CCoE with multi-account \& multi-region security operations}
-          \item {Supported AWS MSSP (Managed Security Service Provider) capabilities, built compliance automation framework, and established enterprise-wide vulnerability management system}
-          \item {Implemented IaC-based security (Terraform + AWS services)}
-          \item {Built ChatOps notification system using AWS Lambda + Teams for real-time security event alerts}
+          \item {Selected the SIEM platform via BAS (Breach and Attack Simulation) with real attack scenarios and verified MITRE ATT\&CK-based detection rules}
+          \item {Centralized multi-account AWS security logs into a dedicated log archive account for unified SIEM monitoring}
+          \item {Lambda and n8n SOAR playbooks that revoke high-risk IAM credentials and isolate instances into a forensic account}
+          \item {MCP (Model Context Protocol)-based AI agent environment for security event analysis; multi-agent analysis combining the verdicts of per-log-type agents}
+          \item {Intake $\rightarrow$ triage $\rightarrow$ owner explanation $\rightarrow$ remediation process with cross-team R\&R}
         \end{itemize}
-        \item {Data Security \& Privacy (DSPM/DLP)}
+        \item {Security framework for the company's generative AI adoption}
         \begin{itemize}
-          \item {Applied data protection measures for Generative AI projects leveraging AWS Bedrock}
-          \item {Implemented security controls for sensitive information, personal data, and internal assets}
+          \item {Reviewed Amazon Bedrock security requirements and designed a generative AI sandbox account architecture}
+          \item {Sensitive-data detection pipeline chaining Amazon Macie S3 PII scans with Bedrock Guardrails, codified in Terraform}
         \end{itemize}
-        \item {Container \& Kubernetes Security}
+        \item {Security architecture review and control rollout for new services and projects}
         \begin{itemize}
-          \item {Strengthened container \& Kubernetes (EKS) security by integrating vulnerability scanning, runtime anomaly monitoring, and CI/CD pipeline security controls}
-          \item {Established comprehensive security framework for cloud-native environments}
+          \item {Reviewed network, logging and threat detection design of AWS projects up front and fed security requirements back}
+          \item {Validated and rolled out AWS-native services (SSM, GuardDuty) as replacements for third-party security tooling}
+          \item {Security baselines for SaaS/PaaS such as Databricks and for Azure/GCP services, based on the shared responsibility model}
         \end{itemize}
+        \item {Container and Kubernetes (EKS) security baseline covering cluster access management and container-level logging}
       \end{cvitems}
     }
 
